@@ -6,7 +6,6 @@ This module packages the [[http://pivotal.github.com/jasmine/][Jasmine]] behavio
 %TOC%
 
 ---++ Behavior-driven development
-
 BDD is a form of test driven development, but with a focus on business requirements and business value.
 
 <noautolink><blockquote>
@@ -32,7 +31,7 @@ Parameters:
    * =version=: Jasmine version number; if not filled in, =1.1.0= is used (version 1.0.2 is also available)
    * =source=: comma-separated list of source code file locations
    * =specs=: comma-separated list of test specification file locations
-   * =elemid=: id of HTML element to display the test
+   * =elemid=: id of HTML element to display the test; the element does not have to have any contents, for instance =&lt;div id="output"&gt;&lt;/div&gt;=
    
 Example of filled in parameters:
 <verbatim class="tml">
@@ -41,7 +40,7 @@ Example of filled in parameters:
    version="1.1.0"
    source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
    specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
-   elemid="test"
+   elemid="output"
 }%
 </verbatim>
 
@@ -54,9 +53,9 @@ If the contrib is installed, you will see a test here:
    version="1.1.0"
    source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
    specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
-   elemid="test"
+   elemid="output"
 }%
-<div id="test"></div>
+<div id="output"></div>
 
 ---++ More information
    * [[http://blog.ivanjovanovic.com/2011/07/22/introduction-to-javascript-bdd-testing-with-jasmine-library/][Introduction to JavaScript BDD testing with Jasmine library]]
