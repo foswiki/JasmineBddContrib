@@ -12,11 +12,11 @@ This module packages the [[http://pivotal.github.com/jasmine/][Jasmine]] behavio
 Add this inline in the topic text:
 <verbatim class="tml">
 %INCLUDE{
-	"%SYSTEMWEB%/JasmineBddContribInline"
-	version="..."
-	source="..."
-	specs="..."
-	elemid="..."
+   "%SYSTEMWEB%/JasmineBddContribInline"
+   version="..."
+   source="..."
+   specs="..."
+   elemid="..."
 }%
 </verbatim>
 
@@ -29,11 +29,11 @@ Parameters:
 Example of filled in parameters:
 <verbatim class="tml">
 %INCLUDE{
-	"%SYSTEMWEB%/JasmineBddContribInline"
-	version="1.1.0"
-	source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
-	specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
-	elemid="test"
+   "%SYSTEMWEB%/JasmineBddContribInline"
+   version="1.1.0"
+   source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
+   specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
+   elemid="test"
 }%
 </verbatim>
 
@@ -41,11 +41,12 @@ Example of filled in parameters:
 ---++ Test installation
 If the contrib is installed, you will see a test here:
 %INCLUDE{
-	"%SYSTEMWEB%/JasmineBddContribInline"
-	version="1.1.0"
-	source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
-	specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
-	elemid="test"
+    warn="off"
+   "%SYSTEMWEB%/JasmineBddContribInline"
+   version="1.1.0"
+   source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
+   specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
+   elemid="test"
 }%
 <div id="test"></div>
 
@@ -56,7 +57,7 @@ If the contrib is installed, you will see a test here:
    * [[http://groups.google.com/group/jasmine-js/][Jasmine Google Group]]
    
 <!--
-   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+   * Set SHORTDESCRIPTION = <noautolink>%$SHORTDESCRIPTION%</noautolink>
 -->
 
 ---++ Installation Instructions
