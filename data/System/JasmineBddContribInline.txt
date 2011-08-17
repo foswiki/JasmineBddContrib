@@ -1,0 +1,74 @@
+%META:TOPICPARENT{name="JasmineBddContrib"}%
+---+ <nop>%TOPIC%
+
+Inline include of [[JasmineBddContrib]] to create a test page.
+
+---++ Initializes the library
+
+<verbatim class="tml">
+%STARTINCLUDE%%ADDTOZONE{
+   "head"
+   id="JasmineBddContrib/jasmine-css"
+   text="<link rel='stylesheet' type='text/css' href='%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/lib/jasmine-%IF{
+   "defined version and $version!=''"
+   then="%version%"
+   else="1.1.0"
+   }%/jasmine.css'>
+"
+}%%ADDTOZONE{
+   "script"
+   id="JasmineBddContrib/jasmine"
+   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-%IF{
+   "defined version and $version!=''"
+   then="%version%"
+   else="1.1.0"
+   }%/lib/jasmine-%IF{
+   "defined version and $version!=''"
+   then="%version%"
+   else="1.1.0"
+   }%/jasmine.js'></script>"
+   requires=""
+}%%ADDTOZONE{
+   "script"
+   id="JasmineBddContrib/jasmine-html"
+   text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-%IF{
+   "defined version and $version!=''"
+   then="%version%"
+   else="1.1.0"
+   }%/lib/jasmine-%IF{
+   "defined version and $version!=''"
+   then="%version%"
+   else="1.1.0"
+   }%/jasmine-html.js'></script>"
+   requires="JasmineBddContrib/jasmine"
+}%%IF{
+   "defined specs AND $specs!=''"
+   then="$percntINCLUDE{$quot%TOPIC%$quot section=$quot_addToHead$quot files=$quot%specs%$quot}$percnt"
+}%%IF{
+   "defined source AND $source!=''"
+   then="$percntINCLUDE{$quot%TOPIC%$quot section=$quot_addToHead$quot files=$quot%source%$quot}$percnt"
+}%%ADDTOZONE{
+   "script"
+   requires="JasmineBddContrib/jasmine,JQUERYPLUGIN::FOSWIKI,JasmineBddContrib/jasmine-inline"
+   text="<literal><script type='text/javascript'>
+jQuery(document).ready(function($) {
+   var reporter = new jasmine.TrivialReporter();
+   reporter.setElem(document.getElementById('%elemid%'));
+   jasmine.getEnv().addReporter(reporter);
+   jasmine.getEnv().execute();
+});
+</script></literal>"
+}%%STOPINCLUDE%
+</verbatim>
+
+<verbatim class="tml">
+%STARTSECTION{"_addToHead"}%%FORMAT{
+   "%files%"
+   type="string"
+   format="$percntADDTOZONE{
+      $quotscript$quot
+      text=$quot<script type='text/javascript' src='$item'></script>$quot
+      requires=$quotJasmineBddContrib/jasmine$quot
+   }$percnt"
+}%%ENDSECTION{"_addToHead"}%
+</verbatim>

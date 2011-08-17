@@ -1,0 +1,79 @@
+---+!! Jasmine BDD Contrib
+
+%SHORTDESCRIPTION%
+
+%TOC%
+
+---++ Summary of Contents
+This module packages the [[http://pivotal.github.com/jasmine/][Jasmine]] behavior-driven development framework in a form suitable for use with Foswiki.
+
+
+---++ Usage
+Add this inline in the topic text:
+<verbatim class="tml">
+%INCLUDE{
+	"%SYSTEMWEB%/JasmineBddContribInline"
+	version="..."
+	source="..."
+	specs="..."
+	elemid="..."
+}%
+</verbatim>
+
+Parameters:
+   * =version=: Jasmine version number; if not filled in, =1.1.0= is used
+   * =source=: comma-separated list of source code file locations
+   * =specs=: comma-separated list of test specification file locations
+   * =elemid=: id of HTML element to display the test
+   
+Example of filled in parameters:
+<verbatim class="tml">
+%INCLUDE{
+	"%SYSTEMWEB%/JasmineBddContribInline"
+	version="1.1.0"
+	source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
+	specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
+	elemid="test"
+}%
+</verbatim>
+
+
+---++ Test installation
+If the contrib is installed, you will see a test here:
+%INCLUDE{
+	"%SYSTEMWEB%/JasmineBddContribInline"
+	version="1.1.0"
+	source="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Player.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/src/Song.js"
+	specs="%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/SpecHelper.js,%PUBURLPATH%/%SYSTEMWEB%/JasmineBddContrib/jasmine-standalone-1.1.0/spec/PlayerSpec.js"
+	elemid="test"
+}%
+<div id="test"></div>
+
+---++ More information
+   * [[http://blog.ivanjovanovic.com/2011/07/22/introduction-to-javascript-bdd-testing-with-jasmine-library/][Introduction to JavaScript BDD testing with Jasmine library]]
+   * [[https://github.com/pivotal/jasmine/wiki/User-guide][User guide]]
+   * [[https://github.com/pivotal/jasmine][Jasmine on GitHub]]
+   * [[http://groups.google.com/group/jasmine-js/][Jasmine Google Group]]
+   
+<!--
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+
+---++ Installation Instructions
+%$INSTALL_INSTRUCTIONS%
+
+---++ Contrib Info
+
+|  Author: | Foswiki:Main/ArthurClemens |
+|  Copyright &copy;: | Foswiki integration 2011: Arthur Clemens |
+|  Copyright &copy;: | Jasmine 2008-2011: [[http://pivotallabs.com/][Pivotal Labs]] |
+|  License: | Jasmine: [[http://www.opensource.org/licenses/mit-license.php][MIT License]]  |
+|  License: | Foswiki integration: [[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]] |
+|  Version: | %$VERSION% |
+|  Release: | %$RELEASE% |
+| Change History: | |
+|  17 Aug 2011 | 1.0.0 First release |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
+

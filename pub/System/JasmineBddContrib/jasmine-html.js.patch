@@ -1,0 +1,28 @@
+--- /Users/arthur/Sites/unittestfoswiki/JasmineBddContrib/pub/System/JasmineBddContrib/jasmine-standalone-1.1.0/lib/jasmine-1.1.0/jasmine-html.js.orig	2011-06-15 09:12:48.000000000 +0200
++++ /Users/arthur/Sites/unittestfoswiki/JasmineBddContrib/pub/System/JasmineBddContrib/jasmine-standalone-1.1.0/lib/jasmine-1.1.0/jasmine-html.js	2011-08-17 14:29:30.000000000 +0200
+@@ -4,6 +4,10 @@
+   this.logRunningSpecs = false;
+ };
+ 
++jasmine.TrivialReporter.prototype.setElem = function(elem) {
++  this.elem = elem;
++}
++
+ jasmine.TrivialReporter.prototype.createDom = function(type, attrs, childrenVarArgs) {
+   var el = document.createElement(type);
+ 
+@@ -51,8 +55,12 @@
+           this.finishedAtSpan = this.createDom('span', { className: 'finished-at' }, ""))
+       );
+ 
+-  this.document.body.appendChild(this.outerDiv);
+-
++  if (this.elem !== undefined) {
++    this.elem.appendChild(this.outerDiv);
++  } else {
++    this.document.body.appendChild(this.outerDiv);
++  }
++  
+   var suites = runner.suites();
+   for (var i = 0; i < suites.length; i++) {
+     var suite = suites[i];
